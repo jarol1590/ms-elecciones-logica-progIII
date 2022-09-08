@@ -7,3 +7,5 @@ export * from './bloque-votante.model';
 export * from './cargo.model';
 export * from './bloque-cargo.model';
 export * from './plancha.model';
+export * from './voto.model';
+export * from './candidato.model';

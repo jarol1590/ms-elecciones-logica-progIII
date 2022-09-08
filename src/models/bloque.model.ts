@@ -1,4 +1,6 @@
-import {Entity, model, property} from '@loopback/repository';
+import {Entity, model, property, hasMany} from '@loopback/repository';
+import {Votante} from './votante.model';
+import {BloqueVotante} from './bloque-votante.model';
 
 @model()
 export class Bloque extends Entity {
@@ -20,6 +22,8 @@ export class Bloque extends Entity {
   })
   descripcion?: string;
 
+  @hasMany(() => Votante, {through: {model: () => BloqueVotante}})
+  votantes: Votante[];
 
   constructor(data?: Partial<Bloque>) {
     super(data);
